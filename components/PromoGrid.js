@@ -15,11 +15,12 @@ export default function PromoGrid({
       <FlatList
         data={promos}
         keyExtractor={(item) => item.id}
-        horizontal={false}
-        numColumns={2}
-        columnWrapperStyle={styles.columnWrapper}
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        snapToAlignment="start"
+        snapToInterval={272}
+        decelerationRate="fast"
         contentContainerStyle={styles.listContent}
-        showsVerticalScrollIndicator={false}
         renderItem={({ item }) => (
           <PromoCard
             promo={item}
@@ -47,11 +48,9 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   listContent: {
-    paddingVertical: 8,
-  },
-  columnWrapper: {
-    justifyContent: 'space-between',
-    marginBottom: 20,
+    paddingVertical: 6,
+    paddingHorizontal: 12,
+    paddingBottom: 12,
   },
   loadMoreContainer: {
     paddingVertical: 20,
