@@ -119,15 +119,15 @@ export default function App() {
 
         <View style={styles.promoBanner}>
           <View style={styles.promoText}>
-            <Text style={styles.promoTitle}>🏥 free check‑up + medicine</Text>
+            <Text style={styles.promoTitle}>Test</Text>
             <View style={styles.promoSubtitleRow}>
               <FontAwesome name="bus" size={14} color="#ffd966" style={{ marginRight: 8 }} />
-              <Text style={styles.promoSubtitle}>free transport to participating hospitals</Text>
+              <Text style={styles.promoSubtitle}>Test</Text>
             </View>
           </View>
           <View style={styles.promoCta}>
             <FontAwesome name="tag" size={14} color="#0b2a3e" />
-            <Text style={styles.promoCtaText}>for poor families</Text>
+            <Text style={styles.promoCtaText}>Discount</Text>
           </View>
         </View>
 

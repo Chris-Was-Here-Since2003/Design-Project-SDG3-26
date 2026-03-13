@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   listContent: {
-    paddingVertical: 8,
+    paddingVertical: 4,
   },
   columnWrapper: {
     justifyContent: 'space-between',

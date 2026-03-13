@@ -2,6 +2,8 @@ import React from 'react';
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 
+
+//individual promo card used in the horizontal scroll list on the home screen
 export default function PromoCard({ promo, isFavorite, onToggleFavorite, onOpen }) {
   return (
     <TouchableOpacity style={styles.card} activeOpacity={0.8} onPress={onOpen}>
@@ -13,29 +15,33 @@ export default function PromoCard({ promo, isFavorite, onToggleFavorite, onOpen 
       </View>
 
       <View style={styles.headerRow}>
-        <Text style={styles.title}>{promo.name}</Text>
+        <Text style={styles.title} numberOfLines={2} ellipsizeMode="tail">
+          {promo.name}
+        </Text>
         <TouchableOpacity onPress={onToggleFavorite} hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}>
           <FontAwesome name={isFavorite ? 'heart' : 'heart-o'} size={20} color={isFavorite ? '#e63946' : '#ccc'} />
         </TouchableOpacity>
       </View>
 
-      <Text style={styles.subtitle}>
+      <Text style={styles.subtitle} numberOfLines={1}>
         <FontAwesome name="hospital" size={12} color="#4b6584" style={styles.subtitleIcon} />
         {promo.hospital} <Text style={styles.rating}>⭐ {promo.rating}</Text>
       </Text>
 
-      <View style={styles.priceRow}>
-        <Text style={styles.currentPrice}>{promo.price}</Text>
-        <Text style={styles.oldPrice}>{promo.oldPrice}</Text>
-      </View>
+      <View style={styles.bottomArea}>
+        <View style={styles.priceRow}>
+          <Text style={styles.currentPrice}>{promo.price}</Text>
+          <Text style={styles.oldPrice}>{promo.oldPrice}</Text>
+        </View>
 
-      <View style={styles.transportRow}>
-        <FontAwesome name="shuttle-van" size={14} color="#1f5170" style={styles.transportIcon} />
-        <Text style={styles.transportText}>{promo.transport}</Text>
-      </View>
+        <View style={styles.transportRow}>
+          <FontAwesome name="shuttle-van" size={14} color="#1f5170" style={styles.transportIcon} />
+          <Text style={styles.transportText}>{promo.transport}</Text>
+        </View>
 
-      <View style={styles.buttonRow}>
-        <Text style={styles.buttonText}>see promo</Text>
+        <View style={styles.buttonRow}>
+          <Text style={styles.buttonText}>see promo</Text>
+        </View>
       </View>
     </TouchableOpacity>
   );
@@ -51,10 +57,11 @@ const styles = StyleSheet.create({
     shadowRadius: 25,
     borderWidth: 1,
     borderColor: 'rgba(0,70,120,0.05)',
-    width: 250,
+    width: 375,
     marginRight: 10,
-    height: 420,
-    justifyContent: 'space-between',
+    height: 630,
+    justifyContent: 'flex-start',
+    overflow: 'hidden',
   },
   image: {
     width: '100%',
@@ -157,6 +164,11 @@ const styles = StyleSheet.create({
     color: '#1f5170',
     fontSize: 12,
     flex: 1,
+  },
+  bottomArea: {
+    paddingTop: 4,
+    borderTopWidth: 1,
+    borderTopColor: '#eee',
   },
   buttonRow: {
     backgroundColor: 'white',

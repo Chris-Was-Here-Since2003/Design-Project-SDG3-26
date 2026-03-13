@@ -3,6 +3,7 @@ import { FlatList, StyleSheet, Text, View } from 'react-native';
 import PromoCard from './PromoCard';
 
 export default function PromoGrid({
+  //
   promos,
   favorites,
   onToggleFavorite,
@@ -12,6 +13,7 @@ export default function PromoGrid({
 }) {
   return (
     <View style={styles.gridContainer}>
+    
       <FlatList
         data={promos}
         keyExtractor={(item) => item.id}
