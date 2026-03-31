@@ -49,22 +49,23 @@ export default function PromoCard({ promo, isFavorite, onToggleFavorite, onOpen 
 
 const styles = StyleSheet.create({
   card: {
-    backgroundColor: 'white',
+    backgroundColor: 'light blue',
     borderRadius: 18,
-    padding: 10,
+    padding: 20,
     shadowColor: '#002040',
     shadowOpacity: 0.08,
     shadowRadius: 25,
     borderWidth: 1,
     borderColor: 'rgba(0,70,120,0.05)',
-    width: 375,
-    marginRight: 10,
-    height: 630,
+    width: 250,
+    margin: 10,
+    height: 420,
     justifyContent: 'flex-start',
     overflow: 'hidden',
+    alignItems: 'center',
   },
   image: {
-    width: '100%',
+    width:'60%',
     aspectRatio: 0.85,
     borderRadius: 16,
     marginBottom: 8,
@@ -79,7 +80,7 @@ const styles = StyleSheet.create({
     borderRadius: 40,
     paddingHorizontal: 10,
     paddingVertical: 3,
-    fontSize: 11,
+    fontSize: 8,
     fontWeight: '600',
     color: '#1e4b70',
     marginRight: 6,
@@ -90,7 +91,7 @@ const styles = StyleSheet.create({
     borderRadius: 40,
     paddingHorizontal: 12,
     paddingVertical: 4,
-    fontSize: 12,
+    fontSize: 10,
     fontWeight: '700',
     color: 'white',
     marginRight: 8,
@@ -101,7 +102,7 @@ const styles = StyleSheet.create({
     borderRadius: 40,
     paddingHorizontal: 12,
     paddingVertical: 4,
-    fontSize: 12,
+    fontSize: 10,
     fontWeight: '700',
     color: '#166534',
     marginRight: 8,
@@ -115,14 +116,14 @@ const styles = StyleSheet.create({
   },
   title: {
     fontWeight: '700',
-    fontSize: 16,
+    fontSize: 12,
     color: '#1e2b3c',
     flex: 1,
     paddingRight: 8,
   },
   subtitle: {
     color: '#4b6584',
-    fontSize: 12,
+    fontSize: 10,
     marginBottom: 12,
   },
   subtitleIcon: {
@@ -138,12 +139,12 @@ const styles = StyleSheet.create({
     marginBottom: 12,
   },
   currentPrice: {
-    fontSize: 18,
+    fontSize: 14,
     fontWeight: '700',
     color: '#0f2b42',
   },
   oldPrice: {
-    fontSize: 13,
+    fontSize: 11,
     color: '#94a3b8',
     textDecorationLine: 'line-through',
   },
@@ -162,13 +163,8 @@ const styles = StyleSheet.create({
   },
   transportText: {
     color: '#1f5170',
-    fontSize: 12,
+    fontSize: 10,
     flex: 1,
-  },
-  bottomArea: {
-    paddingTop: 4,
-    borderTopWidth: 1,
-    borderTopColor: '#eee',
   },
   buttonRow: {
     backgroundColor: 'white',
@@ -183,6 +179,6 @@ const styles = StyleSheet.create({
   buttonText: {
     color: '#1f4b77',
     fontWeight: '600',
-    fontSize: 13,
+    fontSize: 11,
   },
 });

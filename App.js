@@ -252,7 +252,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#102b47',
     borderRadius: 28,
     padding: 24,
-    marginBottom: 40,
+    marginBottom: 20,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
@@ -291,13 +291,13 @@ const styles = StyleSheet.create({
   promoCtaText: {
     fontWeight: '700',
     color: '#0b2a3e',
-    marginLeft: 6,
+    marginLeft: 46,
   },
   sectionTitleRow: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    marginTop: 48,
+    marginTop: 0,
   },
   sectionTitleWithIcon: {
     flexDirection: 'row',

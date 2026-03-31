@@ -8,8 +8,6 @@ export default function PromoGrid({
   favorites,
   onToggleFavorite,
   onOpenPromo,
-  onLoadMore,
-  showLoadMore,
 }) {
   return (
     <View style={styles.gridContainer}>
@@ -31,15 +29,6 @@ export default function PromoGrid({
             onOpen={() => onOpenPromo(item)}
           />
         )}
-        ListFooterComponent={() =>
-          showLoadMore ? (
-            <View style={styles.loadMoreContainer}>
-              <Text style={styles.loadMoreBtn} onPress={onLoadMore}>
-                Load more promos
-              </Text>
-            </View>
-          ) : null
-        }
       />
     </View>
   );
@@ -48,23 +37,11 @@ export default function PromoGrid({
 const styles = StyleSheet.create({
   gridContainer: {
     flex: 1,
+    height : 1,
   },
   listContent: {
-    paddingVertical: 6,
-    paddingHorizontal: 12,
-    paddingBottom: 12,
-  },
-  loadMoreContainer: {
-    paddingVertical: 20,
-    alignItems: 'center',
-  },
-  loadMoreBtn: {
-    paddingHorizontal: 20,
-    paddingVertical: 12,
-    borderRadius: 50,
-    backgroundColor: '#1f4b77',
-    color: 'white',
-    fontWeight: '700',
-    fontSize: 16,
+    paddingLeft: 24,
+    paddingRight: 12,
+    height: 1,
   },
 });
