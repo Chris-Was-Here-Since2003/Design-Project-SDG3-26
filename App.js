@@ -117,19 +117,6 @@ export default function App() {
           onDiscountToggle={setDiscountOnly}
         />
 
-        <View style={styles.promoBanner}>
-          <View style={styles.promoText}>
-            <Text style={styles.promoTitle}>Test</Text>
-            <View style={styles.promoSubtitleRow}>
-              <FontAwesome name="bus" size={14} color="#ffd966" style={{ marginRight: 8 }} />
-              <Text style={styles.promoSubtitle}>Test</Text>
-            </View>
-          </View>
-          <View style={styles.promoCta}>
-            <FontAwesome name="tag" size={14} color="#0b2a3e" />
-            <Text style={styles.promoCtaText}>Discount</Text>
-          </View>
-        </View>
 
         <View style={styles.sectionTitleRow}>
           <View style={styles.sectionTitleWithIcon}>
@@ -141,6 +128,7 @@ export default function App() {
           <Text style={styles.sectionNote}>showing {filteredPromos.length} promos</Text>
         </View>
 
+        <View style = {styles.separator}>
         <PromoGrid
           promos={filteredPromos}
           favorites={favorites}
@@ -149,6 +137,7 @@ export default function App() {
           onLoadMore={handleLoadMore}
           showLoadMore={promos.length < initialPromos.length + morePromos.length}
         />
+        </View>
 
         <View style={styles.sectionTitleRow}>
           <View style={styles.sectionTitleWithIcon}>
@@ -160,11 +149,13 @@ export default function App() {
           <Text style={styles.sectionNote}>showing {filteredHospitals.length} hospitals</Text>
         </View>
 
+        <View style={styles.separator}>
         <HospitalGrid
           hospitals={filteredHospitals}
           favorites={favorites}
           onToggleFavorite={toggleFavorite}
         />
+        </View>
 
         <View style={styles.mapPreview}>
           <Text style={styles.mapPreviewText}>📍 Map preview (tap for route)</Text>
@@ -187,6 +178,10 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
+  separator:{
+    padding: 50,
+    height :'100vh'
+  },
   safeArea: {
     flex: 1,
     backgroundColor: '#f4f7fb',

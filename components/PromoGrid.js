@@ -37,11 +37,11 @@ export default function PromoGrid({
 const styles = StyleSheet.create({
   gridContainer: {
     flex: 1,
-    height : 1,
+    height : '200px',
   },
   listContent: {
     paddingLeft: 24,
     paddingRight: 12,
-    height: 1,
+    height: 200,
   },
 });

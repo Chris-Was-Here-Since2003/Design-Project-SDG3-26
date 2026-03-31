@@ -8,8 +8,6 @@ export default function FilterBar({
   onQueryChange,
   ratingFilter,
   onRatingChange,
-  discountOnly,
-  onDiscountToggle,
 }) {
   return (
     <View style={styles.container}>
@@ -25,24 +23,6 @@ export default function FilterBar({
       </View>
 
       <View style={styles.controlsRow}>
-        <View style={styles.filterChip}>
-          <FontAwesome name="sliders-h" size={14} color={discountOnly ? 'white' : '#2f7fc9'} />
-          <Text
-            style={[
-              styles.filterText,
-              discountOnly ? styles.filterTextActive : styles.filterTextInactive,
-            ]}
-            onPress={() => onDiscountToggle(!discountOnly)}
-          >
-            Discounts
-          </Text>
-          <Switch
-            value={discountOnly}
-            onValueChange={onDiscountToggle}
-            thumbColor={discountOnly ? '#f97316' : '#fff'}
-            trackColor={{ false: '#d1d5db', true: '#f97316' }}
-          />
-        </View>
 
         <View style={styles.pickerWrapper}>
           <Picker
@@ -76,6 +56,7 @@ const styles = StyleSheet.create({
     borderColor: 'rgba(0,60,120,0.08)',
   },
   searchRow: {
+    marginTop : 20,
     flexDirection: 'row',
     alignItems: 'center',
   },
@@ -118,6 +99,7 @@ const styles = StyleSheet.create({
     borderRadius: 40,
     paddingHorizontal: 12,
     paddingVertical: 8,
+    marginBottom:20,
     flex: 1,
   },
   picker: {

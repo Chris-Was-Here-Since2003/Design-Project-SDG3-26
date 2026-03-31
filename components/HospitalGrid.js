@@ -8,11 +8,12 @@ export default function HospitalGrid({ hospitals, favorites, onToggleFavorite })
       <FlatList
         data={hospitals}
         keyExtractor={(item) => item.id}
-        horizontal={false}
-        numColumns={2}
-        columnWrapperStyle={styles.columnWrapper}
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        snapToAlignment="start"
+        snapToInterval={272}
+        decelerationRate="fast"
         contentContainerStyle={styles.listContent}
-        showsVerticalScrollIndicator={false}
         renderItem={({ item }) => (
           <HospitalCard
             hospital={item}
@@ -30,7 +31,9 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   listContent: {
-    paddingVertical: 4,
+    paddingLeft: 24,
+    paddingRight: 12,
+    height: 200,
   },
   columnWrapper: {
     justifyContent: 'space-between',

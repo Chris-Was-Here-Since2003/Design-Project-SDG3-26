@@ -24,13 +24,11 @@ export default function HospitalCard({ hospital, isFavorite, onToggleFavorite })
       </View>
 
       <Text style={styles.subtitle}>
-        <FontAwesome name="map-pin" size={12} color="#4b6584" style={styles.subtitleIcon} />
         {hospital.address}
       </Text>
 
       {hospital.transport.map((line) => (
         <View key={line} style={styles.transportRow}>
-          <FontAwesome name="bus" size={14} color="#0284c7" style={styles.transportIcon} />
           <Text style={styles.transportText}>{line}</Text>
         </View>
       ))}
@@ -45,21 +43,26 @@ export default function HospitalCard({ hospital, isFavorite, onToggleFavorite })
 
 const styles = StyleSheet.create({
   card: {
-    backgroundColor: 'white',
-    borderRadius: 24,
-    padding: 16,
+    backgroundColor: 'light blue',
+    borderRadius: 18,
+    padding: 20,
     shadowColor: '#002040',
     shadowOpacity: 0.08,
     shadowRadius: 25,
     borderWidth: 1,
     borderColor: 'rgba(0,70,120,0.05)',
-    width: '48%',
+    width: 250,
+    margin: 10,
+    height: 420,
+    justifyContent: 'flex-start',
+    overflow: 'hidden',
+    alignItems: 'center',
   },
   image: {
-    width: '100%',
-    aspectRatio: 1,
-    borderRadius: 20,
-    marginBottom: 16,
+    width:'60%',
+    aspectRatio: 0.85,
+    borderRadius: 16,
+    marginBottom: 8,
   },
   tagsRow: {
     flexDirection: 'row',
@@ -71,7 +74,7 @@ const styles = StyleSheet.create({
     borderRadius: 40,
     paddingHorizontal: 12,
     paddingVertical: 4,
-    fontSize: 12,
+    fontSize: 10,
     fontWeight: '600',
     color: '#1e4b70',
     marginRight: 8,
@@ -85,14 +88,14 @@ const styles = StyleSheet.create({
   },
   title: {
     fontWeight: '700',
-    fontSize: 16,
+    fontSize: 12,
     color: '#1e2b3c',
     flex: 1,
     paddingRight: 8,
   },
   subtitle: {
     color: '#4b6584',
-    fontSize: 12,
+    fontSize: 10,
     marginBottom: 12,
   },
   subtitleIcon: {
@@ -125,10 +128,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
+    width: 100,
   },
   actionText: {
     color: '#1f4b77',
     fontWeight: '600',
-    fontSize: 13,
+    fontSize: 10,
   },
 });
