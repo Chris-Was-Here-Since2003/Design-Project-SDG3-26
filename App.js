@@ -10,7 +10,6 @@ import PromoModal from './components/PromoModal';
 
 import { initialPromos, morePromos, hospitals } from './data/data';
 
-const FAVORITES_KEY = 'favorites';
 
 export default function App() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -21,22 +20,7 @@ export default function App() {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [selectedPromo, setSelectedPromo] = useState(null);
 
-  useEffect(() => {
-    (async () => {
-      try {
-        const stored = await AsyncStorage.getItem(FAVORITES_KEY);
-        if (stored) setFavorites(JSON.parse(stored));
-      } catch (error) {
-        console.warn('Failed to read favorites', error);
-      }
-    })();
-  }, []);
 
-  useEffect(() => {
-    AsyncStorage.setItem(FAVORITES_KEY, JSON.stringify(favorites)).catch(() => {
-      // ignore write errors
-    });
-  }, [favorites]);
 
   const filteredPromos = useMemo(() => {
     const query = searchQuery.trim().toLowerCase();
@@ -134,8 +118,6 @@ export default function App() {
           favorites={favorites}
           onToggleFavorite={toggleFavorite}
           onOpenPromo={openPromotion}
-          onLoadMore={handleLoadMore}
-          showLoadMore={promos.length < initialPromos.length + morePromos.length}
         />
         </View>
 
@@ -157,15 +139,6 @@ export default function App() {
         />
         </View>
 
-        <View style={styles.mapPreview}>
-          <Text style={styles.mapPreviewText}>📍 Map preview (tap for route)</Text>
-        </View>
-
-        <View style={styles.footerRow}>
-          <Text style={styles.footerText}>🫶 every promo verified – we help the poor</Text>
-          <Text style={styles.footerText}>🚌 free transport assistance included</Text>
-          <Text style={styles.footerText}>📱 expo frontend – focused on accessibility</Text>
-        </View>
       </ScrollView>
 
       <PromoModal

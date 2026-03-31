@@ -47,10 +47,7 @@ export const initialPromos = [
     rating: '4.7',
     transport: 'accessible transport',
   },
-];
-
-export const morePromos = [
-  {
+{
     id: 'promo5',
     name: 'Diabetes screening',
     hospital: 'City General',
