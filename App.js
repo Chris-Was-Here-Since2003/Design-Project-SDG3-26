@@ -1,6 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { SafeAreaView, ScrollView, StatusBar, StyleSheet, Text, View } from 'react-native';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import { FontAwesome5, FontAwesome } from '@expo/vector-icons';
 
 import FilterBar from './components/FilterBar';
@@ -8,7 +7,8 @@ import PromoGrid from './components/PromoGrid';
 import HospitalGrid from './components/HospitalGrid';
 import PromoModal from './components/PromoModal';
 
-import { initialPromos, morePromos, hospitals } from './data/data';
+import { initialPromos, hospitals } from './data/data';
+//^database, change when database is established
 
 
 export default function App() {
@@ -21,7 +21,7 @@ export default function App() {
   const [selectedPromo, setSelectedPromo] = useState(null);
 
 
-
+//part of database, change when database is established
   const filteredPromos = useMemo(() => {
     const query = searchQuery.trim().toLowerCase();
     return promos.filter((promo) => {
@@ -55,10 +55,6 @@ export default function App() {
       }
       return [...current, id];
     });
-  };
-
-  const handleLoadMore = () => {
-    setPromos((prev) => [...prev, ...morePromos]);
   };
 
   const openPromotion = (promo) => {
