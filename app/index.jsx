@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { SafeAreaView, ScrollView, StatusBar, StyleSheet, Text, View } from 'react-native';
 import { FontAwesome5, FontAwesome } from '@expo/vector-icons';
-
+import { router } from 'expo-router';
 import FilterBar from './components/FilterBar';
 import PromoGrid from './components/PromoGrid';
 import HospitalGrid from './components/HospitalGrid';
@@ -67,6 +67,12 @@ export default function App() {
     setSelectedPromo(null);
   };
 
+  const querySearch = () =>{
+    router.push({
+      pathname: '/results',
+      params: { query: searchQuery }
+    })
+  }
   return (
     <SafeAreaView style={styles.safeArea}>
       <StatusBar barStyle="dark-content" backgroundColor="#f4f7fb" />
@@ -95,6 +101,7 @@ export default function App() {
           onRatingChange={setRatingFilter}
           discountOnly={discountOnly}
           onDiscountToggle={setDiscountOnly}
+          onSearch={querySearch}
         />
 
 

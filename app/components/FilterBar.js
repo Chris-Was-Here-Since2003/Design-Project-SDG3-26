@@ -2,12 +2,14 @@ import React from 'react';
 import { StyleSheet, Switch, Text, TextInput, View } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 import { FontAwesome } from '@expo/vector-icons';
+import { Button } from 'react-native-web';
 
 export default function FilterBar({
   query,
   onQueryChange,
   ratingFilter,
   onRatingChange,
+  querySearch,
 }) {
   return (
     <View style={styles.container}>
@@ -20,6 +22,7 @@ export default function FilterBar({
           value={query}
           onChangeText={onQueryChange}
         />
+        <Button title = "Search" onPress={() => {querySearch()}} color="#1e3b5a" />
       </View>
 
       <View style={styles.controlsRow}>
