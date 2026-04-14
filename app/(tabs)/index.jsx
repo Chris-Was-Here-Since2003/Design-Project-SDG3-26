@@ -7,7 +7,7 @@ import PromoGrid from './components/PromoGrid';
 import HospitalGrid from './components/HospitalGrid';
 import PromoModal from './components/PromoModal';
 
-import { initialPromos, hospitals } from './data/data';
+import { initialPromos, hospitals } from '../../data/data';
 //^database, change when database is established
 
 
